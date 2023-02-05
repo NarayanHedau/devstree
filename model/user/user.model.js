@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 
 const User = new mongoose.Schema(
   {
-    fullName: { type: String},
-    dob: { type: Date},
-    email: { type: String,  },
-    phoneNumber: { type: String },
-    profileImage :{type:String},
-    password:{type:String}
+    email: { type: String  },
+    password:{type:String},
+    phone_number: { type: String },
+    profile_image:{type:String},
+    full_name: { type: String},
+    dob: { type: Date}, 
   },
   { timestamps: true }
 );
