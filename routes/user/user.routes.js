@@ -86,9 +86,9 @@ router.get("/getAll/users", auth.verify, async (req, res) => {
     let { search } = req.query;
     let result;
     if (search && search != "") {
-      result = await User.find({ full_name: { $regex: search, $options: "i" } })
+      result = await User.find({ full_name: { $regex: search, $options: "i" } }).select("-password");
     } else {
-      result = await User.find();
+      result = await User.find().select("-password");
     }
     if (result.length != 0) {
       response.successResponse(res, 200, "User data retrived successfully", result);
